@@ -1,0 +1,17 @@
+<%- include('partials/head') %>
+	<body>
+		<h2>Item a Modificar</h2>
+		<article>
+			<h4>Producto</h4>
+			<h4>Precio</h4>
+			<h4>Descripción</h4>
+		</article>
+		<form method="POST" action="/modificar?_metodo=PATCH" style="display:flex">
+			<input type="text" name="nombre_actualizar" value="<%= registro.nombre %>">
+			<input type="number" name="precio" value="<%= registro.precio %>">
+			<input type="text" name="descripcion" value="<%= registro.descrip %>">
+			<input type="hidden" name="idActualizar" value="<%= registro.id %>">
+			<input type="submit" value="Actualizar">
+		</form>
+		<img src="/img/<%= registro.descrip %>" width='200'>
+<%- include('partials/footer') %>
